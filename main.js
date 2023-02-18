@@ -1,5 +1,6 @@
 // https://github.com/RamouJ/Map-Tile-Generation
 // exmaple project
+// Mapbox studio: https://studio.mapbox.com/styles/tj202222/cle97dav8000301pvw9ezfgv3/
 
 mapboxgl.accessToken =
     'pk.eyJ1IjoidGoyMDIyMjIiLCJhIjoiY2xhMWk3dTdoMDAyczNubmM4cW5wcjczaCJ9._xPR8eZ1wQpDOCkm7f-vEg';
