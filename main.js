@@ -7,8 +7,8 @@ mapboxgl.accessToken =
 let map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/dark-v10',
-    zoom: 10, // starting zoom
-    center: [-122.21577498436348, 47.57071475092992] // starting center
+    zoom: 9.5, // starting zoom
+    center: [-122, 47.46] // starting center
 });
 
 map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
