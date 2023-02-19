@@ -7,60 +7,95 @@ mapboxgl.accessToken =
 let map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/dark-v10',
-    zoom: 12, // starting zoom
-    center: [-122.2559435, 47.6002614] // starting center
+    zoom: 10, // starting zoom
+    center: [-122.21577498436348, 47.57071475092992] // starting center
 });
 
 map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
 
-    map.addSource('uw-tiles', {
+    map.addSource('Warm_high_contrast-tiles', {
         'type': 'raster',
         'tiles': [
-            'assets/uw/{z}/{x}/{y}.png'
+            'assets/warm/{z}/{x}/{y}.png'
         ],
         'tileSize': 256,
-        'attribution': 'Map tiles designed by Bo Zhao</a>'
+        'attribution': 'Map tiles designed by Tai Jing'
     });
 
-    map.addSource('lgbtq-tiles', {
+    map.addSource('base-tiles', {
         'type': 'raster',
         'tiles': [
-            'assets/lgbtq/{z}/{x}/{y}.png'
+            'assets/base/{z}/{x}/{y}.png'
         ],
         'tileSize': 256,
-        'attribution': 'Map tiles designed by Bo Zhao'
+        'attribution': 'Map tiles designed by Tai Jing</a>'
+    });
+
+    map.addSource('thematic-tiles', {
+        'type': 'raster',
+        'tiles': [
+            'assets/thematic/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256,
+        'attribution': 'Map tiles designed by Tai Jing'
+    });
+
+    map.addSource('base-thematic-tiles', {
+        'type': 'raster',
+        'tiles': [
+            'assets/thematic_base/{z}/{x}/{y}.png'
+        ],
+        'tileSize': 256,
+        'attribution': 'Map tiles designed by Tai Jing'
     });
 
     map.addLayer({
-        'id': 'uw',
+        'id': 'Lively Green',
         'type': 'raster',
         'layout': {
             'visibility': 'none'
         },
-        'source': 'uw-tiles'
+        'source': 'Warm_high_contrast-tiles'
     });
 
     map.addLayer({
-        'id': 'lgbtq',
+        'id': 'Sky Blue',
         'type': 'raster',
         'layout': {
             'visibility': 'none'
         },
-        'source': 'lgbtq-tiles'
+        'source': 'base-tiles'
     });
 
+    map.addLayer({
+        'id': 'Hospitals',
+        'type': 'raster',
+        'layout': {
+            'visibility': 'none'
+        },
+        'source': 'thematic-tiles'
+    });
+
+    map.addLayer({
+        'id': 'Base and Thematic',
+        'type': 'raster',
+        'layout': {
+            'visibility': 'none'
+        },
+        'source': 'base-thematic-tiles'
+    });
 });
 
 
 // After the last frame rendered before the map enters an "idle" state.
 map.on('idle', () => {
-    // If these two layers were not added to the map, abort
-    if (!map.getLayer('uw') || !map.getLayer('lgbtq')) {
+    // If any layer was not added to the map, abort
+    if (!map.getLayer('Sky Blue') || !map.getLayer('Hospitals') || !map.getLayer('Base and Thematic') || !map.getLayer('Lively Green')) {
         return;
     }
 
     // Enumerate ids of the layers.
-    const toggleableLayerIds = ['uw', 'lgbtq'];
+    const toggleableLayerIds = ['Lively Green','Sky Blue', 'Hospitals', 'Base and Thematic'];
 
     // Set up the corresponding toggle button for each layer.
     for (const id of toggleableLayerIds) {

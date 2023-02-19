@@ -55,3 +55,22 @@ body {
 #menu a.active:hover {
     background: #3074a4;
 }
+
+#container {
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.546);
+    margin-top: 3%;
+    width: 400px;
+    height: 75px;
+    margin-left: 2.5%;
+}
+
+#title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    /* margin: 10px; */
+    text-align: center;
+    margin-top: 25px;
+}
