@@ -1,6 +1,6 @@
 # Seattle Medical Centers Map Tiles
 
-> [Link](https://tj717.github.io/Seattle-Medical-Centers-Map-Tiles) to access the map.
+> [Link](https://tj717.github.io/Seattle-Medical-Centers-Map-Tiles/map.html) to access the map.
 
 This map aims to visualize the locations of the medical centers in the Seattle area.  The map is created using the Mapbox API, styled using Mapbox Studio, and hosted on GitHub Pages. The tile sets are generated from QGIS's QMetaTiles and use WMS to connect with Mapbox Studio's base maps.
 
