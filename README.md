@@ -22,7 +22,7 @@ This map aims to visualize the locations of the medical centers in the Seattle a
 ## Fourth Layer: Bright-Themed Map
 ![Layer 4](/img/map4.png)
 - Zoom level: 10 - 14
-- This layer is a custom map style I designed using Mapbox Studio. I adjusted the size of the icons and the color of the water and the land to make the map's color more soothing and bright. The warm colors of the base map also serve as a good contrast to the colors of the icons of the hospitals if the users want to combine the two layers.
+- This layer is a custom map style I designed using Mapbox Studio. I adjusted the size of the icons and the color of the water and the land to make the map's color more soothing and bright. The warm colors of the base map also serve as a good contrast to the colors of the icons of the hospitals if the users want to combine the two layers, which is specifically why I put this map layer at the top in the toggle menu.
 
 
 
